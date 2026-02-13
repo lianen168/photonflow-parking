@@ -6,18 +6,17 @@
     <title>photonflow.ai | The Optical Interconnect</title>
     <meta name="description" content="Acquire photonflow.ai. In the AGI era, the bottleneck is the interconnect. Photon flow is what matters.">
     
-    <!-- Fonts: 'Rajdhani' (Tech) & 'Space Mono' (Code) -->
+    <!-- Fonts Combination: V1 (Title) + V3 (UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@700&family=Rajdhani:wght@300;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-core: #050505;
+            --bg-core: #020202;
             --cyan: #00f3ff;
-            --cyan-dim: rgba(0, 243, 255, 0.1);
+            --blue: #0066ff;
             --white: #ffffff;
-            --gray: #666;
             --border: rgba(255, 255, 255, 0.1);
         }
 
@@ -26,61 +25,73 @@
         body {
             background-color: var(--bg-core);
             color: var(--white);
-            font-family: 'Space Mono', monospace;
+            font-family: 'Space Mono', monospace; /* Engineering body font */
             overflow-x: hidden;
             line-height: 1.4;
         }
 
-        /* --- BACKGROUND CANVAS --- */
+        /* --- BACKGROUND CANVAS (V1 Style: Trails) --- */
         #flow-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            opacity: 0.4;
-        }
-        .vignette {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
-            background: radial-gradient(circle, transparent 0%, #000 90%);
         }
 
-        /* --- HEADER SECTION --- */
+        /* --- HEADER SECTION (V1 Style: Fonts & Anim) --- */
         header {
-            padding: 4vh 20px;
+            padding: 5vh 20px 2vh 20px;
             text-align: center;
             position: relative;
             z-index: 10;
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(5,5,5,0.9), transparent);
+            background: linear-gradient(180deg, rgba(2,2,2,0.8), transparent);
         }
 
         .musk-quote {
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             color: var(--cyan);
             font-size: 0.8rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
         }
 
-        .brand-title {
-            font-family: 'Rajdhani', sans-serif;
+        .brand-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        /* V1 Title Styles */
+        .brand-flow {
+            font-family: 'Michroma', sans-serif; /* Wide, Sci-Fi */
+            font-size: clamp(2rem, 7vw, 4.5rem);
+            background: linear-gradient(90deg, #fff, var(--cyan), var(--blue));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: lightSpeed 3s linear infinite;
+        }
+
+        .brand-ai {
+            font-family: 'Syncopate', sans-serif;
             font-weight: 700;
-            /* Clamp: Min 2rem, Max 4.5rem - Mobile Optimized */
-            font-size: clamp(2rem, 8vw, 4.5rem); 
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
+            font-size: clamp(2rem, 7vw, 4.5rem);
+            color: #fff;
+            position: relative;
         }
         
-        .txt-flow {
-            background: linear-gradient(90deg, #fff, var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        
-        .txt-ai { color: #fff; position: relative; }
-        .txt-ai::after {
-            content: ''; position: absolute; bottom: 5px; right: -5px;
-            width: 6px; height: 6px; background: var(--cyan);
-            box-shadow: 0 0 10px var(--cyan); animation: pulse 2s infinite;
+        .brand-ai::after {
+            content: '';
+            position: absolute;
+            bottom: 8px; right: -8px;
+            width: 8px; height: 8px;
+            background: var(--cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--cyan);
+            animation: pulse 1s infinite;
         }
 
         /* --- THE BOTTLENECK INSIGHT --- */
@@ -88,17 +99,19 @@
             max-width: 700px;
             margin: 0 auto;
             border-left: 2px solid var(--cyan);
-            background: linear-gradient(90deg, var(--cyan-dim), transparent);
+            background: linear-gradient(90deg, rgba(0, 243, 255, 0.05), transparent);
             padding: 1.5rem;
             text-align: left;
             margin-bottom: 2rem;
         }
         
         .insight-text {
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1rem, 3vw, 1.4rem);
             color: #ddd;
+            line-height: 1.5;
         }
-        .highlight { color: var(--cyan); font-weight: 700; }
+        .highlight { color: var(--cyan); font-weight: 700; text-shadow: 0 0 10px rgba(0,243,255,0.2); }
 
         /* --- 12 MODULES GRID (CSS ANIMATIONS) --- */
         .grid-wrapper {
@@ -109,110 +122,86 @@
 
         .tech-grid {
             display: grid;
-            /* Mobile: 2 cols, Desktop: 4 cols */
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: repeat(2, 1fr); /* Mobile optimized */
             gap: 15px;
         }
-
         @media(min-width: 768px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
 
         .module {
-            background: rgba(20, 20, 20, 0.6);
+            background: rgba(10, 10, 15, 0.6); /* Slightly darker/glassy */
             border: 1px solid var(--border);
             padding: 15px;
-            border-radius: 4px;
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            backdrop-filter: blur(5px);
             transition: all 0.3s;
         }
 
         .module:hover {
             border-color: var(--cyan);
             transform: translateY(-3px);
-            background: rgba(0, 243, 255, 0.05);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            background: rgba(0, 243, 255, 0.03);
         }
 
         /* --- CSS ANIMATED ICONS --- */
-        .icon-stage {
-            width: 40px; height: 40px;
-            position: relative;
-            margin-bottom: 5px;
-        }
+        .icon-stage { width: 40px; height: 40px; position: relative; margin-bottom: 5px; }
 
-        /* 1. Beam (Silicon Photonics) */
+        /* 1. Beam */
         .anim-beam { width: 100%; height: 2px; background: #333; top: 50%; position: absolute; }
-        .anim-beam::after {
-            content: ''; position: absolute; top: -1px; left: 0; width: 10px; height: 4px;
-            background: var(--cyan); animation: moveRight 1s infinite linear;
-        }
+        .anim-beam::after { content: ''; position: absolute; top: -1px; left: 0; width: 15px; height: 4px; background: var(--cyan); animation: moveRight 1s infinite linear; box-shadow: 0 0 10px var(--cyan); }
 
-        /* 2. Pulse (Zero Latency) */
-        .anim-pulse {
-            width: 100%; height: 100%; border: 2px solid var(--cyan);
-            border-radius: 50%; opacity: 0; animation: ripple 1.5s infinite;
-        }
+        /* 2. Pulse */
+        .anim-pulse { width: 100%; height: 100%; border: 2px solid var(--cyan); border-radius: 50%; opacity: 0; animation: ripple 1.5s infinite; }
 
-        /* 3. Bar (Thermal) */
+        /* 3. Bar */
         .anim-bar-cont { width: 10px; height: 30px; border: 1px solid #555; position: absolute; bottom: 0; left: 15px; }
         .anim-bar-fill { width: 100%; height: 100%; background: var(--cyan); animation: drain 2s infinite ease-in-out; bottom: 0; position: absolute; }
 
-        /* 4. Nodes (Neural Net) */
+        /* 4. Nodes */
         .anim-nodes { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .node-dot { width: 6px; height: 6px; background: #555; border-radius: 50%; }
         .node-dot:nth-child(1) { animation: flash 1s infinite 0s; }
         .node-dot:nth-child(2) { animation: flash 1s infinite 0.2s; }
         .node-dot:nth-child(3) { animation: flash 1s infinite 0.4s; }
 
-        /* 5. Stream (Exascale) */
+        /* 5. Stream */
         .anim-stream { display: flex; flex-direction: column; gap: 4px; width: 100%; height: 100%; justify-content: center; }
         .stream-line { height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--cyan)); animation: slide 1s infinite linear; }
         .stream-line:nth-child(2) { animation-delay: 0.5s; width: 80%; }
 
-        /* 6. Radar (LiDAR) */
-        .anim-radar {
-            width: 30px; height: 30px; border: 1px solid #555; border-radius: 50%;
-            position: relative; margin: 5px auto; overflow: hidden;
-        }
-        .radar-sweep {
-            width: 100%; height: 100%; background: conic-gradient(from 0deg, transparent 70%, var(--cyan));
-            border-radius: 50%; animation: spin 2s infinite linear; opacity: 0.5;
-        }
+        /* 6. Radar */
+        .anim-radar { width: 30px; height: 30px; border: 1px solid #555; border-radius: 50%; position: relative; margin: 5px auto; overflow: hidden; }
+        .radar-sweep { width: 100%; height: 100%; background: conic-gradient(from 0deg, transparent 70%, var(--cyan)); border-radius: 50%; animation: spin 2s infinite linear; opacity: 0.5; }
 
-        /* 7. Stack (Wafer) */
+        /* 7. Stack */
         .anim-stack div { width: 25px; height: 4px; background: #444; margin-bottom: 4px; border-radius: 2px; }
         .anim-stack div:nth-child(1) { animation: stackLight 1.5s infinite 0s; }
         .anim-stack div:nth-child(2) { animation: stackLight 1.5s infinite 0.5s; }
         .anim-stack div:nth-child(3) { animation: stackLight 1.5s infinite 1.0s; }
 
-        /* 8. Entangle (Quantum) */
+        /* 8. Entangle */
         .anim-entangle { position: relative; width: 100%; height: 100%; }
-        .dot-q { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; position: absolute; }
+        .dot-q { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; position: absolute; box-shadow: 0 0 5px var(--cyan); }
         .dot-q.left { left: 0; top: 16px; animation: orbitL 2s infinite ease-in-out; }
         .dot-q.right { right: 0; top: 16px; animation: orbitR 2s infinite ease-in-out; }
 
-        /* 9. Hologram (Cube) */
+        /* 9. Hologram */
         .anim-holo { width: 20px; height: 20px; border: 1px dashed var(--cyan); margin: 10px auto; animation: spin 4s infinite linear; }
 
-        /* 10. Logic (FPGA) */
+        /* 10. Logic */
         .anim-logic { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; height: 100%; }
         .logic-bit { background: #333; }
         .logic-bit.on { background: var(--cyan); animation: toggle 0.5s infinite alternate; }
 
-        /* 11. Wave (Analog) */
-        .anim-wave {
-            width: 100%; height: 20px; margin-top: 10px;
-            background: repeating-linear-gradient(90deg, transparent, transparent 5px, var(--cyan) 5px, var(--cyan) 6px);
-            mask-image: linear-gradient(to right, transparent, black, transparent);
-            animation: moveRight 2s infinite linear;
-        }
+        /* 11. Wave */
+        .anim-wave { width: 100%; height: 20px; margin-top: 10px; background: repeating-linear-gradient(90deg, transparent, transparent 5px, var(--cyan) 5px, var(--cyan) 6px); mask-image: linear-gradient(to right, transparent, black, transparent); animation: moveRight 2s infinite linear; }
 
-        /* 12. Brain (AGI) */
-        .anim-brain {
-            width: 30px; height: 30px; border: 2px solid #555; border-radius: 6px;
-            margin: 5px auto; display: flex; justify-content: center; align-items: center;
-        }
-        .brain-core { width: 10px; height: 10px; background: var(--cyan); animation: pulse 1s infinite; }
+        /* 12. Brain */
+        .anim-brain { width: 30px; height: 30px; border: 2px solid #555; border-radius: 6px; margin: 5px auto; display: flex; justify-content: center; align-items: center; }
+        .brain-core { width: 10px; height: 10px; background: var(--cyan); animation: pulse 1s infinite; box-shadow: 0 0 8px var(--cyan); }
 
 
         .mod-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: #fff; }
@@ -221,37 +210,37 @@
         /* --- FOOTER --- */
         footer {
             border-top: 1px solid var(--border);
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
-            background: #020202;
+            background: linear-gradient(0deg, #050505, transparent);
         }
 
         .price-block { margin-bottom: 2rem; }
-        .price { font-size: 2.5rem; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #fff; }
-        .plan { font-size: 0.8rem; color: var(--cyan); letter-spacing: 1px; }
+        .price { font-size: 3rem; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #fff; text-shadow: 0 0 20px rgba(0, 243, 255, 0.2); }
+        .plan { font-size: 0.9rem; color: var(--cyan); letter-spacing: 1px; background: rgba(0,243,255,0.1); padding: 5px 15px; border-radius: 20px; }
 
         .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 2rem; }
 
         .btn {
-            padding: 12px 30px;
-            font-family: 'Space Mono', monospace;
+            padding: 15px 35px;
+            font-family: 'Michroma', sans-serif; /* Using V1 font for button for consistency */
             font-size: 0.8rem;
             text-transform: uppercase;
             cursor: pointer;
             text-decoration: none;
             transition: 0.3s;
+            border-radius: 4px;
         }
-        .btn-buy { background: var(--cyan); color: #000; font-weight: 700; border: none; }
-        .btn-buy:hover { box-shadow: 0 0 20px var(--cyan); transform: scale(1.05); }
+        .btn-buy { background: var(--white); color: #000; border: none; }
+        .btn-buy:hover { box-shadow: 0 0 30px var(--cyan); transform: scale(1.05); background: var(--cyan); }
         
-        .btn-contact { background: transparent; color: #fff; border: 1px solid #444; }
+        .btn-contact { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
         .btn-contact:hover { border-color: var(--cyan); color: var(--cyan); }
 
-        .disclaimer {
-            font-size: 0.6rem; color: #444; max-width: 600px; margin: 0 auto;
-        }
+        .disclaimer { font-size: 0.6rem; color: #555; max-width: 600px; margin: 0 auto; line-height: 1.5; }
 
-        /* --- ANIMATIONS KEYFRAMES --- */
+        /* --- ANIMATIONS --- */
+        @keyframes lightSpeed { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
         @keyframes moveRight { 0% { left: 0; background-position: 0 0; } 100% { left: 100%; background-position: 20px 0; } }
         @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.2); opacity: 0; } }
         @keyframes drain { 0%, 100% { height: 100%; } 50% { height: 20%; } }
@@ -277,18 +266,19 @@
 </head>
 <body>
 
-    <div class="vignette"></div>
     <canvas id="flow-canvas"></canvas>
 
     <header>
-        <!-- 1. The First Principle -->
+        <!-- Top: Musk Quote -->
         <div class="musk-quote">"Photon flow is what matters"</div>
         
-        <h1 class="brand-title">
-            <span class="txt-flow">photonflow</span><span class="txt-ai">.ai</span>
-        </h1>
+        <!-- V1 Title Style -->
+        <div class="brand-wrapper">
+            <h1 class="brand-flow">photonflow</h1>
+            <span class="brand-ai">.ai</span>
+        </div>
 
-        <!-- 2. The Engineering Bottleneck -->
+        <!-- Sub: The Bottleneck Hook -->
         <div class="insight-box">
             <div class="insight-text">
                 "In the AGI era, the bottleneck isn't the model.<br>
@@ -299,7 +289,7 @@
 
     <main class="grid-wrapper">
         <div class="tech-grid">
-            <!-- 12 Animated Modules -->
+            <!-- 12 Modules with V3 CSS Animations -->
             <div class="module">
                 <div class="icon-stage"><div class="anim-beam"></div></div>
                 <div class="mod-title">Silicon Photonics</div>
@@ -397,55 +387,78 @@
     <div id="toast">>> EMAIL ADDRESS COPIED</div>
 
     <script>
-        // --- 1. PARTICLE FLOW CANVAS (Background) ---
+        // --- V1 STYLE CANVAS: High Speed Trails ---
         const canvas = document.getElementById('flow-canvas');
         const ctx = canvas.getContext('2d');
-        let w, h;
-        const particles = [];
+        let width, height;
+        let particles = [];
 
         function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
         }
         window.addEventListener('resize', resize);
         resize();
 
         class Particle {
             constructor() {
-                this.x = Math.random() * w;
-                this.y = Math.random() * h;
-                this.speed = Math.random() * 3 + 1;
-                this.size = Math.random() * 1.5;
-                this.len = Math.random() * 30 + 10;
+                this.reset();
             }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.speed = Math.random() * 5 + 2; // Fast speed (V1 logic)
+                this.size = Math.random() * 2 + 0.5;
+                this.length = Math.random() * 50 + 10; // Long trails (V1 logic)
+                
+                // Color variation: Cyan to Blue (V1 logic)
+                const blueVal = Math.floor(Math.random() * 155 + 100);
+                this.color = `rgba(0, ${blueVal}, 255, ${Math.random() * 0.5 + 0.1})`;
+            }
+
             update() {
                 this.x += this.speed;
-                if(this.x > w) this.x = -this.len;
+                if (this.x > width) {
+                    this.x = -this.length;
+                    this.y = Math.random() * height;
+                }
             }
+
             draw() {
                 ctx.beginPath();
-                // Gradient trail for speed effect
-                let g = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y);
-                g.addColorStop(0, "rgba(0, 243, 255, 0.5)"); // Cyan head
-                g.addColorStop(1, "rgba(0, 0, 0, 0)"); // Fade tail
-                ctx.strokeStyle = g;
+                // Draw a trail (stream)
+                const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.length, this.y);
+                gradient.addColorStop(0, this.color);
+                gradient.addColorStop(1, 'rgba(0,0,0,0)');
+                
+                ctx.strokeStyle = gradient;
                 ctx.lineWidth = this.size;
                 ctx.moveTo(this.x, this.y);
-                ctx.lineTo(this.x - this.len, this.y);
+                ctx.lineTo(this.x - this.length, this.y);
                 ctx.stroke();
             }
         }
 
-        for(let i=0; i<80; i++) particles.push(new Particle());
+        // Init Particles
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
 
         function animate() {
-            ctx.clearRect(0,0,w,h);
-            particles.forEach(p => { p.update(); p.draw(); });
+            // V1 Logic: Trail effect (motion blur)
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; 
+            ctx.fillRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
             requestAnimationFrame(animate);
         }
         animate();
 
-        // --- 2. ACTIONS ---
+        // --- ACTIONS ---
         function copyEmail() {
             navigator.clipboard.writeText("joshua369x@gmail.com").then(() => {
                 const toast = document.getElementById('toast');
