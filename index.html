@@ -3,211 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photonflow.ai | The Optical Compute Layer</title>
-    <meta name="description" content="Acquire photonflow.ai. The bottleneck of AGI is not the model, it's the interconnect. Photon Flow is the solution to Moore's Law end.">
+    <title>photonflow.ai | The Optical Interconnect</title>
+    <meta name="description" content="Acquire photonflow.ai. In the AGI era, the bottleneck is the interconnect. Photon flow is what matters.">
     
-    <!-- Fonts: 'Orbitron' for Title, 'Space Mono' for Data -->
+    <!-- Fonts: 'Rajdhani' (Tech) & 'Space Mono' (Code) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "photonflow.ai Domain",
-      "description": "Premium domain asset for Silicon Photonics and Optical Computing infrastructure.",
-      "brand": { "@type": "Brand", "name": "Domain Asset" },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv",
-        "priceCurrency": "USD",
-        "price": "7000",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-deep: #020202;
-            --neon-cyan: #00f3ff;
-            --laser-blue: #0044ff;
-            --alert-red: #ff3333;
-            --text-main: #e0e0e0;
-            --text-dim: #5c677d;
-            --panel-bg: rgba(10, 15, 20, 0.85);
-            --border-glow: rgba(0, 243, 255, 0.3);
+            --bg-core: #050505;
+            --cyan: #00f3ff;
+            --cyan-dim: rgba(0, 243, 255, 0.1);
+            --white: #ffffff;
+            --gray: #666;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'Space Mono', monospace; /* Engineering feel */
+            background-color: var(--bg-core);
+            color: var(--white);
+            font-family: 'Space Mono', monospace;
             overflow-x: hidden;
-            min-height: 100vh;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        /* --- BACKGROUND FX --- */
-        #optical-fiber-canvas {
+        /* --- BACKGROUND CANVAS --- */
+        #flow-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            opacity: 0.4;
         }
-        .scanlines {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
-            opacity: 0.6;
+        .vignette {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+            background: radial-gradient(circle, transparent 0%, #000 90%);
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER SECTION --- */
         header {
-            padding: 4vh 5vw;
+            padding: 4vh 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
-            background: linear-gradient(180deg, rgba(0,0,0,0.9), transparent);
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(5,5,5,0.9), transparent);
         }
 
-        .system-status {
-            font-size: 0.7rem; color: var(--neon-cyan); letter-spacing: 2px;
-            margin-bottom: 1rem; text-transform: uppercase; display: flex;
-            justify-content: center; align-items: center; gap: 10px;
+        .musk-quote {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--cyan);
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
-        .status-dot { width: 8px; height: 8px; background: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: blink 2s infinite; }
 
-        .domain-title {
-            /* Responsive Font Size: Never too big, never too small */
-            font-size: clamp(1.8rem, 5vw, 4rem); 
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: -0.05em;
+        .brand-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            /* Clamp: Min 2rem, Max 4.5rem - Mobile Optimized */
+            font-size: clamp(2rem, 8vw, 4.5rem); 
+            line-height: 1;
             margin-bottom: 1.5rem;
-            display: inline-block;
+            letter-spacing: -0.02em;
         }
         
-        .title-photon {
-            background: linear-gradient(90deg, #fff, var(--neon-cyan));
+        .txt-flow {
+            background: linear-gradient(90deg, #fff, var(--cyan));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
         }
-        .title-ai { color: #fff; font-weight: 900; }
+        
+        .txt-ai { color: #fff; position: relative; }
+        .txt-ai::after {
+            content: ''; position: absolute; bottom: 5px; right: -5px;
+            width: 6px; height: 6px; background: var(--cyan);
+            box-shadow: 0 0 10px var(--cyan); animation: pulse 2s infinite;
+        }
 
-        /* --- HERO MESSAGE (The Hook) --- */
-        .mission-statement {
-            max-width: 800px; margin: 0 auto; padding: 2rem 1rem;
-            text-align: center; position: relative;
+        /* --- THE BOTTLENECK INSIGHT --- */
+        .insight-box {
+            max-width: 700px;
+            margin: 0 auto;
+            border-left: 2px solid var(--cyan);
+            background: linear-gradient(90deg, var(--cyan-dim), transparent);
+            padding: 1.5rem;
+            text-align: left;
+            margin-bottom: 2rem;
         }
-        .mission-statement::before, .mission-statement::after {
-            content: ''; position: absolute; width: 20px; height: 20px;
-            border: 1px solid var(--neon-cyan); transition: all 0.3s;
+        
+        .insight-text {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            color: #ddd;
         }
-        .mission-statement::before { top: 0; left: 0; border-right: none; border-bottom: none; }
-        .mission-statement::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+        .highlight { color: var(--cyan); font-weight: 700; }
 
-        .problem { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
-        .solution { 
-            font-size: clamp(1.1rem, 3vw, 1.8rem); 
-            font-weight: 700; color: #fff; 
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
-        }
-        .highlight { color: var(--neon-cyan); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 5px; }
-
-        /* --- GRID SYSTEM --- */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Compact on mobile */
-            gap: 15px;
-            padding: 2rem 5vw;
+        /* --- 12 MODULES GRID (CSS ANIMATIONS) --- */
+        .grid-wrapper {
+            padding: 2rem 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .spec-card {
-            background: var(--panel-bg);
-            border: 1px solid rgba(255,255,255,0.08);
+        .tech-grid {
+            display: grid;
+            /* Mobile: 2 cols, Desktop: 4 cols */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px;
+        }
+
+        @media(min-width: 768px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        .module {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid var(--border);
             padding: 15px;
             border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             transition: all 0.3s;
+        }
+
+        .module:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        /* --- CSS ANIMATED ICONS --- */
+        .icon-stage {
+            width: 40px; height: 40px;
             position: relative;
-            overflow: hidden;
+            margin-bottom: 5px;
         }
 
-        .spec-card:hover {
-            border-color: var(--neon-cyan);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 243, 255, 0.1);
+        /* 1. Beam (Silicon Photonics) */
+        .anim-beam { width: 100%; height: 2px; background: #333; top: 50%; position: absolute; }
+        .anim-beam::after {
+            content: ''; position: absolute; top: -1px; left: 0; width: 10px; height: 4px;
+            background: var(--cyan); animation: moveRight 1s infinite linear;
         }
 
-        /* Tech-decorations on cards */
-        .spec-card::after {
-            content: ''; position: absolute; bottom: 0; right: 0; 
-            width: 0; height: 2px; background: var(--neon-cyan); transition: width 0.3s;
+        /* 2. Pulse (Zero Latency) */
+        .anim-pulse {
+            width: 100%; height: 100%; border: 2px solid var(--cyan);
+            border-radius: 50%; opacity: 0; animation: ripple 1.5s infinite;
         }
-        .spec-card:hover::after { width: 100%; }
 
-        .spec-icon { font-size: 1.2rem; color: var(--neon-cyan); margin-bottom: 8px; }
-        .spec-title { font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase; margin-bottom: 5px; }
-        .spec-desc { font-size: 0.7rem; color: var(--text-dim); line-height: 1.4; }
+        /* 3. Bar (Thermal) */
+        .anim-bar-cont { width: 10px; height: 30px; border: 1px solid #555; position: absolute; bottom: 0; left: 15px; }
+        .anim-bar-fill { width: 100%; height: 100%; background: var(--cyan); animation: drain 2s infinite ease-in-out; bottom: 0; position: absolute; }
 
-        /* --- TERMINAL PRICING --- */
-        .terminal-footer {
-            margin-top: 4rem;
-            border-top: 1px solid #333;
-            background: #050505;
+        /* 4. Nodes (Neural Net) */
+        .anim-nodes { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .node-dot { width: 6px; height: 6px; background: #555; border-radius: 50%; }
+        .node-dot:nth-child(1) { animation: flash 1s infinite 0s; }
+        .node-dot:nth-child(2) { animation: flash 1s infinite 0.2s; }
+        .node-dot:nth-child(3) { animation: flash 1s infinite 0.4s; }
+
+        /* 5. Stream (Exascale) */
+        .anim-stream { display: flex; flex-direction: column; gap: 4px; width: 100%; height: 100%; justify-content: center; }
+        .stream-line { height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--cyan)); animation: slide 1s infinite linear; }
+        .stream-line:nth-child(2) { animation-delay: 0.5s; width: 80%; }
+
+        /* 6. Radar (LiDAR) */
+        .anim-radar {
+            width: 30px; height: 30px; border: 1px solid #555; border-radius: 50%;
+            position: relative; margin: 5px auto; overflow: hidden;
+        }
+        .radar-sweep {
+            width: 100%; height: 100%; background: conic-gradient(from 0deg, transparent 70%, var(--cyan));
+            border-radius: 50%; animation: spin 2s infinite linear; opacity: 0.5;
+        }
+
+        /* 7. Stack (Wafer) */
+        .anim-stack div { width: 25px; height: 4px; background: #444; margin-bottom: 4px; border-radius: 2px; }
+        .anim-stack div:nth-child(1) { animation: stackLight 1.5s infinite 0s; }
+        .anim-stack div:nth-child(2) { animation: stackLight 1.5s infinite 0.5s; }
+        .anim-stack div:nth-child(3) { animation: stackLight 1.5s infinite 1.0s; }
+
+        /* 8. Entangle (Quantum) */
+        .anim-entangle { position: relative; width: 100%; height: 100%; }
+        .dot-q { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; position: absolute; }
+        .dot-q.left { left: 0; top: 16px; animation: orbitL 2s infinite ease-in-out; }
+        .dot-q.right { right: 0; top: 16px; animation: orbitR 2s infinite ease-in-out; }
+
+        /* 9. Hologram (Cube) */
+        .anim-holo { width: 20px; height: 20px; border: 1px dashed var(--cyan); margin: 10px auto; animation: spin 4s infinite linear; }
+
+        /* 10. Logic (FPGA) */
+        .anim-logic { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; height: 100%; }
+        .logic-bit { background: #333; }
+        .logic-bit.on { background: var(--cyan); animation: toggle 0.5s infinite alternate; }
+
+        /* 11. Wave (Analog) */
+        .anim-wave {
+            width: 100%; height: 20px; margin-top: 10px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, var(--cyan) 5px, var(--cyan) 6px);
+            mask-image: linear-gradient(to right, transparent, black, transparent);
+            animation: moveRight 2s infinite linear;
+        }
+
+        /* 12. Brain (AGI) */
+        .anim-brain {
+            width: 30px; height: 30px; border: 2px solid #555; border-radius: 6px;
+            margin: 5px auto; display: flex; justify-content: center; align-items: center;
+        }
+        .brain-core { width: 10px; height: 10px; background: var(--cyan); animation: pulse 1s infinite; }
+
+
+        .mod-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: #fff; }
+        .mod-desc { font-size: 0.65rem; color: #888; line-height: 1.3; }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border);
             padding: 3rem 1rem;
             text-align: center;
+            background: #020202;
         }
 
-        .cmd-line {
-            font-family: 'Space Mono', monospace;
-            color: var(--neon-cyan);
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-        }
-        .blink { animation: blink 1s step-end infinite; }
+        .price-block { margin-bottom: 2rem; }
+        .price { font-size: 2.5rem; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #fff; }
+        .plan { font-size: 0.8rem; color: var(--cyan); letter-spacing: 1px; }
 
-        .price-tag {
-            font-size: 3rem; font-weight: 700; color: #fff;
-            margin-bottom: 0.5rem; letter-spacing: -2px;
-        }
-        .installments { font-size: 0.8rem; color: var(--text-dim); background: #111; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 2rem; }
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 2rem; }
 
-        .btn-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        
         .btn {
-            padding: 15px 30px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem; letter-spacing: 2px;
-            text-transform: uppercase; text-decoration: none;
-            cursor: pointer; position: relative; transition: 0.3s;
-            border: 1px solid transparent;
+            padding: 12px 30px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
         }
-
-        .btn-primary {
-            background: var(--neon-cyan); color: #000; font-weight: 900;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
-        }
-        .btn-primary:hover { background: #fff; box-shadow: 0 0 30px rgba(0, 243, 255, 0.6); }
-
-        .btn-secondary {
-            background: transparent; color: var(--text-dim); border: 1px solid #333;
-        }
-        .btn-secondary:hover { border-color: #fff; color: #fff; }
+        .btn-buy { background: var(--cyan); color: #000; font-weight: 700; border: none; }
+        .btn-buy:hover { box-shadow: 0 0 20px var(--cyan); transform: scale(1.05); }
+        
+        .btn-contact { background: transparent; color: #fff; border: 1px solid #444; }
+        .btn-contact:hover { border-color: var(--cyan); color: var(--cyan); }
 
         .disclaimer {
-            margin-top: 3rem; font-size: 0.6rem; color: #333; max-width: 600px; margin-left: auto; margin-right: auto;
+            font-size: 0.6rem; color: #444; max-width: 600px; margin: 0 auto;
         }
 
-        @keyframes blink { 50% { opacity: 0; } }
-        
+        /* --- ANIMATIONS KEYFRAMES --- */
+        @keyframes moveRight { 0% { left: 0; background-position: 0 0; } 100% { left: 100%; background-position: 20px 0; } }
+        @keyframes ripple { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(1.2); opacity: 0; } }
+        @keyframes drain { 0%, 100% { height: 100%; } 50% { height: 20%; } }
+        @keyframes flash { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; background: var(--cyan); } }
+        @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes stackLight { 0%, 100% { background: #444; } 20% { background: var(--cyan); } }
+        @keyframes orbitL { 0% { left: 0; } 50% { left: 25px; } 100% { left: 0; } }
+        @keyframes orbitR { 0% { right: 0; } 50% { right: 25px; } 100% { right: 0; } }
+        @keyframes toggle { from { opacity: 0.3; } to { opacity: 1; } }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
         /* Toast */
         #toast {
-            visibility: hidden; min-width: 200px; background-color: #111; color: var(--neon-cyan);
-            text-align: center; padding: 12px; border: 1px solid var(--neon-cyan);
-            position: fixed; z-index: 200; bottom: 30px; left: 50%; transform: translateX(-50%);
-            font-family: 'Space Mono', monospace; font-size: 0.8rem;
+            visibility: hidden; background: #111; color: var(--cyan); border: 1px solid var(--cyan);
+            text-align: center; padding: 10px 20px; position: fixed; bottom: 30px; left: 50%;
+            transform: translateX(-50%); z-index: 100; font-size: 0.8rem;
         }
         #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
         @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
@@ -216,195 +277,185 @@
 </head>
 <body>
 
-    <div class="scanlines"></div>
-    <canvas id="optical-fiber-canvas"></canvas>
+    <div class="vignette"></div>
+    <canvas id="flow-canvas"></canvas>
 
     <header>
-        <div class="system-status">
-            <div class="status-dot"></div> System Optimal // Bandwidth: Infinite
-        </div>
-        <h1 class="domain-title">
-            <span class="title-photon">photonflow</span><span class="title-ai">.ai</span>
+        <!-- 1. The First Principle -->
+        <div class="musk-quote">"Photon flow is what matters"</div>
+        
+        <h1 class="brand-title">
+            <span class="txt-flow">photonflow</span><span class="txt-ai">.ai</span>
         </h1>
+
+        <!-- 2. The Engineering Bottleneck -->
+        <div class="insight-box">
+            <div class="insight-text">
+                "In the AGI era, the bottleneck isn't the model.<br>
+                It's the <span class="highlight">interconnect</span>."
+            </div>
+        </div>
     </header>
 
-    <!-- THE HOOK: Engineering Reality -->
-    <div class="mission-statement">
-        <div class="problem">Current Status: Silicon Resistance Critical</div>
-        <div class="solution">
-            "In the AGI era, the bottleneck isn't the model.<br>
-            It's the <span class="highlight">interconnect</span>."
-        </div>
-        <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">
-            Solve the I/O choke point with light speed.
-        </p>
-    </div>
+    <main class="grid-wrapper">
+        <div class="tech-grid">
+            <!-- 12 Animated Modules -->
+            <div class="module">
+                <div class="icon-stage"><div class="anim-beam"></div></div>
+                <div class="mod-title">Silicon Photonics</div>
+                <div class="mod-desc">Lasers embedded on silicon wafers.</div>
+            </div>
+            
+            <div class="module">
+                <div class="icon-stage"><div class="anim-pulse"></div></div>
+                <div class="mod-title">Zero Latency</div>
+                <div class="mod-desc">Speed of light signal transmission.</div>
+            </div>
+            
+            <div class="module">
+                <div class="icon-stage"><div class="anim-bar-cont"><div class="anim-bar-fill"></div></div></div>
+                <div class="mod-title">Thermal Eff.</div>
+                <div class="mod-desc">Photons create zero resistive heat.</div>
+            </div>
 
-    <!-- 12 MODULES: Geek/Hardware Vibe -->
-    <main class="specs-grid">
-        <div class="spec-card">
-            <div class="spec-icon">⚡/💡</div>
-            <div class="spec-title">Silicon Photonics</div>
-            <div class="spec-desc">Embedding lasers directly onto silicon wafers.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">⏱️</div>
-            <div class="spec-title">Zero Latency</div>
-            <div class="spec-desc">Data transmission at 299,792,458 m/s.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🌡️</div>
-            <div class="spec-title">Thermal Efficiency</div>
-            <div class="spec-desc">Photons generate zero heat during transport.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🧠</div>
-            <div class="spec-title">Optical Neural Net</div>
-            <div class="spec-desc">Matrix multiplication via light diffraction.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">📡</div>
-            <div class="spec-title">Exascale I/O</div>
-            <div class="spec-desc">Tbps bandwidth for GPU cluster interconnects.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">👁️</div>
-            <div class="spec-title">LiDAR Vision</div>
-            <div class="spec-desc">Coherent light sensing for autonomous agents.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🧱</div>
-            <div class="spec-title">Wafer Stacking</div>
-            <div class="spec-desc">3D integration of memory and optical logic.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🔐</div>
-            <div class="spec-title">Quantum Key</div>
-            <div class="spec-desc">Unbreakable encryption via photon entanglement.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">💾</div>
-            <div class="spec-title">Holographic RAM</div>
-            <div class="spec-desc">Volumetric storage for LLM weights.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">⚙️</div>
-            <div class="spec-title">Photonic FPGA</div>
-            <div class="spec-desc">Reconfigurable light pathways for adaptive AI.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🔄</div>
-            <div class="spec-title">Analog Compute</div>
-            <div class="spec-desc">Energy-efficient continuous signal processing.</div>
-        </div>
-        <div class="spec-card">
-            <div class="spec-icon">🚀</div>
-            <div class="spec-title">AGI Hardware</div>
-            <div class="spec-desc">The physical substrate required for Superintelligence.</div>
+            <div class="module">
+                <div class="icon-stage"><div class="anim-nodes"><div class="node-dot"></div><div class="node-dot"></div><div class="node-dot"></div></div></div>
+                <div class="mod-title">Optical NN</div>
+                <div class="mod-desc">Diffraction-based matrix math.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-stream"><div class="stream-line"></div><div class="stream-line"></div></div></div>
+                <div class="mod-title">Exascale I/O</div>
+                <div class="mod-desc">Terabits per second interconnects.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-radar"><div class="radar-sweep"></div></div></div>
+                <div class="mod-title">LiDAR Vision</div>
+                <div class="mod-desc">Coherent sensing for robots.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-stack"><div></div><div></div><div></div></div></div>
+                <div class="mod-title">3D Stacking</div>
+                <div class="mod-desc">Vertical integration of logic & light.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-entangle"><div class="dot-q left"></div><div class="dot-q right"></div></div></div>
+                <div class="mod-title">Quantum Key</div>
+                <div class="mod-desc">Entangled photon encryption.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-holo"></div></div>
+                <div class="mod-title">Holographic RAM</div>
+                <div class="mod-desc">Volumetric 5D data storage.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-logic"><div class="logic-bit"></div><div class="logic-bit on"></div><div class="logic-bit on"></div><div class="logic-bit"></div></div></div>
+                <div class="mod-title">Photonic FPGA</div>
+                <div class="mod-desc">Reconfigurable optical gates.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-wave"></div></div>
+                <div class="mod-title">Analog Compute</div>
+                <div class="mod-desc">Continuous wave processing.</div>
+            </div>
+
+            <div class="module">
+                <div class="icon-stage"><div class="anim-brain"><div class="brain-core"></div></div></div>
+                <div class="mod-title">AGI Hardware</div>
+                <div class="mod-desc">The substrate for superintelligence.</div>
+            </div>
         </div>
     </main>
 
-    <footer class="terminal-footer">
-        <div class="cmd-line">
-            root@photonflow:~# initiate_acquisition_protocol<span class="blink">_</span>
+    <footer>
+        <div class="price-block">
+            <div class="price">$7,000</div>
+            <div class="plan">7 MONTHLY INSTALLMENTS</div>
         </div>
 
-        <div class="price-tag">$7,000</div>
-        <div class="installments">[ 7 Monthly Installments ]</div>
-
-        <div class="btn-container">
-            <a onclick="buyAction()" class="btn btn-primary">ACQUIRE ASSET</a>
-            <button onclick="copyEmail()" class="btn btn-secondary">COPY CONTACT</button>
+        <div class="btn-group">
+            <a onclick="buyAction()" class="btn btn-buy">ACQUIRE ASSET</a>
+            <button onclick="copyEmail()" class="btn btn-contact">COPY CONTACT</button>
         </div>
 
-        <p class="disclaimer">
-            &copy; 2026 PhotonFlow Concept.<br><br>
-            DISCLAIMER: This site represents a premium domain asset for sale. 
-            References to "Silicon Photonics" or "AGI" are descriptive of the domain's potential application. 
-            <strong>photonflow.ai is not affiliated with Neuralink, OpenAI, NVIDIA, SpaceX, or any other corporation.</strong> 
-            Transactions are securely processed via Spaceship.com.
-        </p>
+        <div class="disclaimer">
+            &copy; 2026 PhotonFlow.ai Concept.<br><br>
+            <strong>Disclaimer:</strong> This is a premium domain asset. 
+            References to "Photon flow" and "Bottlenecks" are industry-standard technical concepts.
+            This domain is not affiliated with Neuralink, NVIDIA, OpenAI, TSMC, or any other corporation.
+            All transactions are securely processed via Spaceship.com.
+        </div>
     </footer>
 
-    <div id="toast">>> EMAIL COPIED TO CLIPBOARD</div>
+    <div id="toast">>> EMAIL ADDRESS COPIED</div>
 
     <script>
-        // --- GEEK VISUALS: Fiber Optic Simulation ---
-        const canvas = document.getElementById('optical-fiber-canvas');
+        // --- 1. PARTICLE FLOW CANVAS (Background) ---
+        const canvas = document.getElementById('flow-canvas');
         const ctx = canvas.getContext('2d');
-        
-        let width, height;
-        let particles = [];
+        let w, h;
+        const particles = [];
 
         function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
         }
         window.addEventListener('resize', resize);
         resize();
 
-        class Photon {
+        class Particle {
             constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = Math.random() * 4 + 2; // High velocity
-                this.len = Math.random() * 80 + 20; // Long trails
-                this.width = Math.random() * 2;
-                this.alpha = Math.random() * 0.5 + 0.1;
-                this.color = Math.random() > 0.9 ? '#ffffff' : '#00f3ff'; // Occasional white flash
+                this.x = Math.random() * w;
+                this.y = Math.random() * h;
+                this.speed = Math.random() * 3 + 1;
+                this.size = Math.random() * 1.5;
+                this.len = Math.random() * 30 + 10;
             }
             update() {
-                this.x += this.vx;
-                if(this.x > width + this.len) {
-                    this.x = -this.len;
-                    this.y = Math.random() * height;
-                }
+                this.x += this.speed;
+                if(this.x > w) this.x = -this.len;
             }
             draw() {
                 ctx.beginPath();
-                // Create a glowing trail effect
-                let grad = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y);
-                grad.addColorStop(0, this.color);
-                grad.addColorStop(1, "rgba(0, 243, 255, 0)");
-                
-                ctx.strokeStyle = grad;
-                ctx.lineWidth = this.width;
+                // Gradient trail for speed effect
+                let g = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y);
+                g.addColorStop(0, "rgba(0, 243, 255, 0.5)"); // Cyan head
+                g.addColorStop(1, "rgba(0, 0, 0, 0)"); // Fade tail
+                ctx.strokeStyle = g;
+                ctx.lineWidth = this.size;
                 ctx.moveTo(this.x, this.y);
                 ctx.lineTo(this.x - this.len, this.y);
                 ctx.stroke();
             }
         }
 
-        // Create high density flow
-        for(let i=0; i<100; i++) particles.push(new Photon());
+        for(let i=0; i<80; i++) particles.push(new Particle());
 
         function animate() {
-            // Clear with slight opacity for motion blur trail
-            ctx.fillStyle = "rgba(2, 2, 2, 0.2)"; 
-            ctx.fillRect(0,0,width,height);
-            
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            ctx.clearRect(0,0,w,h);
+            particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
         animate();
 
-        // --- ACTIONS ---
+        // --- 2. ACTIONS ---
         function copyEmail() {
             navigator.clipboard.writeText("joshua369x@gmail.com").then(() => {
-                const toast = document.getElementById("toast");
-                toast.className = "show";
-                setTimeout(() => toast.className = toast.className.replace("show", ""), 2500);
+                const toast = document.getElementById('toast');
+                toast.className = 'show';
+                setTimeout(() => toast.className = '', 2000);
             });
         }
 
         function buyAction() {
-            window.open("https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv", '_blank');
+            window.open("https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv", "_blank");
         }
     </script>
 </body>
