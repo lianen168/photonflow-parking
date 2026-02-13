@@ -3,284 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photonflow.ai | Light Speed Intelligence</title>
-    <meta name="description" content="Acquire photonflow.ai - The definitive domain for Optical Computing, Silicon Photonics, and Light-Speed AGI Architecture.">
-    <meta name="keywords" content="photonflow, AI domain, Optical Computing, Silicon Photonics, AGI, Neural Networks, Light Speed, Elon Musk">
+    <title>photonflow.ai | The Optical Compute Layer</title>
+    <meta name="description" content="Acquire photonflow.ai. The bottleneck of AGI is not the model, it's the interconnect. Photon Flow is the solution to Moore's Law end.">
     
-    <!-- Typography -->
+    <!-- Fonts: 'Orbitron' for Title, 'Space Mono' for Data -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Schema.org SEO -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "photonflow.ai Domain Name",
-      "description": "Premium domain asset for the future of Photonic AI and Optical Computing.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Domain Asset"
-      },
+      "name": "photonflow.ai Domain",
+      "description": "Premium domain asset for Silicon Photonics and Optical Computing infrastructure.",
+      "brand": { "@type": "Brand", "name": "Domain Asset" },
       "offers": {
         "@type": "Offer",
         "url": "https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv",
         "priceCurrency": "USD",
         "price": "7000",
-        "priceValidUntil": "2028-01-01",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
+        "availability": "https://schema.org/InStock"
       }
     }
     </script>
 
     <style>
         :root {
-            --bg-color: #000000;
-            --photon-cyan: #00f3ff;
-            --photon-blue: #0066ff;
-            --photon-white: #e0faff;
-            --text-primary: #ffffff;
-            --text-dim: #8892b0;
-            --glass: rgba(10, 20, 30, 0.6);
-            --border: rgba(0, 243, 255, 0.15);
+            --bg-deep: #020202;
+            --neon-cyan: #00f3ff;
+            --laser-blue: #0044ff;
+            --alert-red: #ff3333;
+            --text-main: #e0e0e0;
+            --text-dim: #5c677d;
+            --panel-bg: rgba(10, 15, 20, 0.85);
+            --border-glow: rgba(0, 243, 255, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace; /* Engineering feel */
             overflow-x: hidden;
             min-height: 100vh;
-        }
-
-        /* --- BACKGROUND PARTICLE CANVAS --- */
-        #flow-canvas {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-        }
-
-        /* --- INTRO SECTION --- */
-        .intro-quote {
-            text-align: center;
-            padding-top: 5vh;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 300;
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            color: var(--text-dim);
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in;
-            opacity: 0.8;
-        }
-
-        .intro-quote span {
-            color: var(--photon-cyan);
-            text-shadow: 0 0 10px var(--photon-cyan);
-        }
-
-        header {
-            min-height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .domain-wrapper {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-        }
-
-        /* Dynamic Font: PhotonFlow (Liquid, Fast) */
-        .brand-flow {
-            font-family: 'Michroma', sans-serif; /* Wide, Sci-Fi */
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            background: linear-gradient(90deg, #fff, var(--photon-cyan), var(--photon-blue));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: lightSpeed 3s linear infinite;
-        }
-
-        /* Dynamic Font: .AI (Digital, Quantum) */
-        .brand-ai {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            color: #fff;
-            position: relative;
-        }
-        
-        .brand-ai::after {
-            content: '';
-            position: absolute;
-            bottom: 5px; right: -10px;
-            width: 10px; height: 10px;
-            background: var(--photon-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--photon-cyan);
-            animation: pulse 1s infinite;
-        }
-
-        /* --- 12 AI FIELDS GRID --- */
-        .grid-section {
-            padding: 4rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--photon-cyan);
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
-            background: rgba(0, 243, 255, 0.05);
-        }
-
-        /* Light beam effect on hover */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: skewX(-25deg);
-            transition: 0.5s;
-        }
-        .card:hover::before { left: 150%; }
-
-        .card h3 {
-            color: var(--photon-white);
-            font-family: 'Michroma', sans-serif;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-dim);
             line-height: 1.5;
         }
 
-        /* --- PRICING --- */
-        .pricing-panel {
+        /* --- BACKGROUND FX --- */
+        #optical-fiber-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        }
+        .scanlines {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            opacity: 0.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 4vh 5vw;
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(to top, #000 20%, transparent);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+            background: linear-gradient(180deg, rgba(0,0,0,0.9), transparent);
         }
 
-        .price-main {
-            font-size: 4rem;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-            margin-bottom: 0.5rem;
+        .system-status {
+            font-size: 0.7rem; color: var(--neon-cyan); letter-spacing: 2px;
+            margin-bottom: 1rem; text-transform: uppercase; display: flex;
+            justify-content: center; align-items: center; gap: 10px;
         }
+        .status-dot { width: 8px; height: 8px; background: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); animation: blink 2s infinite; }
 
-        .installments {
+        .domain-title {
+            /* Responsive Font Size: Never too big, never too small */
+            font-size: clamp(1.8rem, 5vw, 4rem); 
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.5rem;
             display: inline-block;
-            border: 1px solid var(--border);
-            padding: 5px 15px;
-            border-radius: 50px;
-            color: var(--photon-cyan);
-            font-size: 1rem;
-            margin-bottom: 3rem;
-            background: rgba(0, 243, 255, 0.05);
+        }
+        
+        .title-photon {
+            background: linear-gradient(90deg, #fff, var(--neon-cyan));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+        .title-ai { color: #fff; font-weight: 900; }
+
+        /* --- HERO MESSAGE (The Hook) --- */
+        .mission-statement {
+            max-width: 800px; margin: 0 auto; padding: 2rem 1rem;
+            text-align: center; position: relative;
+        }
+        .mission-statement::before, .mission-statement::after {
+            content: ''; position: absolute; width: 20px; height: 20px;
+            border: 1px solid var(--neon-cyan); transition: all 0.3s;
+        }
+        .mission-statement::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .mission-statement::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+        .problem { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .solution { 
+            font-size: clamp(1.1rem, 3vw, 1.8rem); 
+            font-weight: 700; color: #fff; 
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+        .highlight { color: var(--neon-cyan); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 5px; }
+
+        /* --- GRID SYSTEM --- */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Compact on mobile */
+            gap: 15px;
+            padding: 2rem 5vw;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* --- CTA BUTTONS --- */
-        .action-area {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 18px 40px;
-            font-family: 'Michroma', sans-serif;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            text-decoration: none;
+        .spec-card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 15px;
             border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            letter-spacing: 1px;
         }
 
-        .btn-buy {
-            background: #fff;
-            color: #000;
-            border: 1px solid #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        .spec-card:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 243, 255, 0.1);
         }
 
-        .btn-buy:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.5);
-            background: var(--photon-cyan);
-            border-color: var(--photon-cyan);
+        /* Tech-decorations on cards */
+        .spec-card::after {
+            content: ''; position: absolute; bottom: 0; right: 0; 
+            width: 0; height: 2px; background: var(--neon-cyan); transition: width 0.3s;
         }
+        .spec-card:hover::after { width: 100%; }
 
-        .btn-contact {
-            background: transparent;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
+        .spec-icon { font-size: 1.2rem; color: var(--neon-cyan); margin-bottom: 8px; }
+        .spec-title { font-size: 0.8rem; font-weight: 700; color: #fff; text-transform: uppercase; margin-bottom: 5px; }
+        .spec-desc { font-size: 0.7rem; color: var(--text-dim); line-height: 1.4; }
 
-        .btn-contact:hover {
-            border-color: var(--photon-cyan);
-            color: var(--photon-cyan);
-            box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.1);
-        }
-
-        footer {
+        /* --- TERMINAL PRICING --- */
+        .terminal-footer {
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            background: #050505;
+            padding: 3rem 1rem;
             text-align: center;
-            padding: 3rem;
-            color: #444;
-            font-size: 0.75rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- ANIMATIONS --- */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 0.8; transform: translateY(0); } }
-        @keyframes lightSpeed { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+        .cmd-line {
+            font-family: 'Space Mono', monospace;
+            color: var(--neon-cyan);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .blink { animation: blink 1s step-end infinite; }
 
+        .price-tag {
+            font-size: 3rem; font-weight: 700; color: #fff;
+            margin-bottom: 0.5rem; letter-spacing: -2px;
+        }
+        .installments { font-size: 0.8rem; color: var(--text-dim); background: #111; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 2rem; }
+
+        .btn-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        
+        .btn {
+            padding: 15px 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; text-decoration: none;
+            cursor: pointer; position: relative; transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--neon-cyan); color: #000; font-weight: 900;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
+        .btn-primary:hover { background: #fff; box-shadow: 0 0 30px rgba(0, 243, 255, 0.6); }
+
+        .btn-secondary {
+            background: transparent; color: var(--text-dim); border: 1px solid #333;
+        }
+        .btn-secondary:hover { border-color: #fff; color: #fff; }
+
+        .disclaimer {
+            margin-top: 3rem; font-size: 0.6rem; color: #333; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+        
         /* Toast */
         #toast {
-            visibility: hidden; min-width: 250px; background-color: var(--photon-blue);
-            color: #fff; text-align: center; border-radius: 4px; padding: 16px;
-            position: fixed; z-index: 100; bottom: 30px; left: 50%;
-            transform: translateX(-50%); font-family: 'Rajdhani', sans-serif;
-            font-weight: 600; box-shadow: 0 0 20px rgba(0,102,255,0.5);
+            visibility: hidden; min-width: 200px; background-color: #111; color: var(--neon-cyan);
+            text-align: center; padding: 12px; border: 1px solid var(--neon-cyan);
+            position: fixed; z-index: 200; bottom: 30px; left: 50%; transform: translateX(-50%);
+            font-family: 'Space Mono', monospace; font-size: 0.8rem;
         }
         #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
         @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
@@ -289,99 +216,123 @@
 </head>
 <body>
 
-    <!-- Particle Background -->
-    <canvas id="flow-canvas"></canvas>
-
-    <div class="intro-quote">
-        "<span>Photon flow</span> is what matters" — Elon Musk
-    </div>
+    <div class="scanlines"></div>
+    <canvas id="optical-fiber-canvas"></canvas>
 
     <header>
-        <div class="domain-wrapper">
-            <h1 class="brand-flow">photonflow</h1>
-            <span class="brand-ai">.ai</span>
+        <div class="system-status">
+            <div class="status-dot"></div> System Optimal // Bandwidth: Infinite
         </div>
-        <p style="margin-top: 20px; color: var(--text-dim); letter-spacing: 2px;">THE BANDWIDTH OF INTELLIGENCE</p>
+        <h1 class="domain-title">
+            <span class="title-photon">photonflow</span><span class="title-ai">.ai</span>
+        </h1>
     </header>
 
-    <main class="grid-section">
-        <div class="grid-container">
-            <!-- 12 AI & Photon Fields -->
-            <article class="card">
-                <h3>Optical Neural Networks</h3>
-                <p>Replacing electrons with photons for matrix multiplication at the speed of light.</p>
-            </article>
-            <article class="card">
-                <h3>Silicon Photonics</h3>
-                <p>The convergence of semiconductor manufacturing and optical data transmission.</p>
-            </article>
-            <article class="card">
-                <h3>Zero-Latency Inference</h3>
-                <p>Eliminating the bottleneck of electrical resistance for real-time AGI decision making.</p>
-            </article>
-            <article class="card">
-                <h3>Exascale Interconnects</h3>
-                <p>Massive bandwidth pipelines connecting thousands of GPUs into a single super-brain.</p>
-            </article>
-            <article class="card">
-                <h3>Holographic Storage</h3>
-                <p>5D optical data storage solutions for the infinite memory requirements of Large Models.</p>
-            </article>
-            <article class="card">
-                <h3>LiDAR Perception</h3>
-                <p>Advanced photonic sensing for autonomous agents to map the physical world.</p>
-            </article>
-            <article class="card">
-                <h3>Quantum Photonics</h3>
-                <p>Leveraging entangled photons for secure AI communications and q-bit processing.</p>
-            </article>
-            <article class="card">
-                <h3>Thermal Efficiency</h3>
-                <p>Drastically reducing the energy cost of intelligence. Cool light vs. hot electrons.</p>
-            </article>
-            <article class="card">
-                <h3>Femtosecond Processing</h3>
-                <p>Ultra-fast laser pulses enabling clock speeds impossible with silicon transistors.</p>
-            </article>
-            <article class="card">
-                <h3>Neuromorphic Optics</h3>
-                <p>Hardware architecture that mimics the biological brain using light pathways.</p>
-            </article>
-            <article class="card">
-                <h3>Photonic FPGA</h3>
-                <p>Reconfigurable optical logic gates for adaptive AI algorithms.</p>
-            </article>
-            <article class="card">
-                <h3>The Speed of Thought</h3>
-                <p>The ultimate goal: AGI that thinks as fast as light travels.</p>
-            </article>
+    <!-- THE HOOK: Engineering Reality -->
+    <div class="mission-statement">
+        <div class="problem">Current Status: Silicon Resistance Critical</div>
+        <div class="solution">
+            "In the AGI era, the bottleneck isn't the model.<br>
+            It's the <span class="highlight">interconnect</span>."
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">
+            Solve the I/O choke point with light speed.
+        </p>
+    </div>
+
+    <!-- 12 MODULES: Geek/Hardware Vibe -->
+    <main class="specs-grid">
+        <div class="spec-card">
+            <div class="spec-icon">⚡/💡</div>
+            <div class="spec-title">Silicon Photonics</div>
+            <div class="spec-desc">Embedding lasers directly onto silicon wafers.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">⏱️</div>
+            <div class="spec-title">Zero Latency</div>
+            <div class="spec-desc">Data transmission at 299,792,458 m/s.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🌡️</div>
+            <div class="spec-title">Thermal Efficiency</div>
+            <div class="spec-desc">Photons generate zero heat during transport.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🧠</div>
+            <div class="spec-title">Optical Neural Net</div>
+            <div class="spec-desc">Matrix multiplication via light diffraction.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">📡</div>
+            <div class="spec-title">Exascale I/O</div>
+            <div class="spec-desc">Tbps bandwidth for GPU cluster interconnects.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">👁️</div>
+            <div class="spec-title">LiDAR Vision</div>
+            <div class="spec-desc">Coherent light sensing for autonomous agents.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🧱</div>
+            <div class="spec-title">Wafer Stacking</div>
+            <div class="spec-desc">3D integration of memory and optical logic.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🔐</div>
+            <div class="spec-title">Quantum Key</div>
+            <div class="spec-desc">Unbreakable encryption via photon entanglement.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">💾</div>
+            <div class="spec-title">Holographic RAM</div>
+            <div class="spec-desc">Volumetric storage for LLM weights.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">⚙️</div>
+            <div class="spec-title">Photonic FPGA</div>
+            <div class="spec-desc">Reconfigurable light pathways for adaptive AI.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🔄</div>
+            <div class="spec-title">Analog Compute</div>
+            <div class="spec-desc">Energy-efficient continuous signal processing.</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-icon">🚀</div>
+            <div class="spec-title">AGI Hardware</div>
+            <div class="spec-desc">The physical substrate required for Superintelligence.</div>
         </div>
     </main>
 
-    <section class="pricing-panel">
-        <div class="price-main">$7,000</div>
-        <div class="installments">7 Monthly Installments Available</div>
-        
-        <div class="action-area">
-            <a href="#" onclick="buyAction()" class="btn btn-buy">Acquire Asset</a>
-            <button onclick="copyEmail()" class="btn btn-contact">Contact Design</button>
+    <footer class="terminal-footer">
+        <div class="cmd-line">
+            root@photonflow:~# initiate_acquisition_protocol<span class="blink">_</span>
         </div>
-    </section>
 
-    <footer>
-        &copy; 2026 PhotonFlow Concept. All rights reserved.<br><br>
-        Disclaimer: Photonflow.ai is a premium domain asset available for acquisition. 
-        Quotes attributed to Elon Musk are contextual references to physics principles often cited by him 
-        (e.g., regarding engine efficiency or Starlink) and used here metaphorically for optical computing. 
-        Not affiliated with Neuralink, SpaceX, or OpenAI. Transaction securely handled by Spaceship.com.
+        <div class="price-tag">$7,000</div>
+        <div class="installments">[ 7 Monthly Installments ]</div>
+
+        <div class="btn-container">
+            <a onclick="buyAction()" class="btn btn-primary">ACQUIRE ASSET</a>
+            <button onclick="copyEmail()" class="btn btn-secondary">COPY CONTACT</button>
+        </div>
+
+        <p class="disclaimer">
+            &copy; 2026 PhotonFlow Concept.<br><br>
+            DISCLAIMER: This site represents a premium domain asset for sale. 
+            References to "Silicon Photonics" or "AGI" are descriptive of the domain's potential application. 
+            <strong>photonflow.ai is not affiliated with Neuralink, OpenAI, NVIDIA, SpaceX, or any other corporation.</strong> 
+            Transactions are securely processed via Spaceship.com.
+        </p>
     </footer>
 
-    <div id="toast">Email joshua369x@gmail.com copied</div>
+    <div id="toast">>> EMAIL COPIED TO CLIPBOARD</div>
 
     <script>
-        // --- 1. PARTICLE FLOW SYSTEM ---
-        const canvas = document.getElementById('flow-canvas');
+        // --- GEEK VISUALS: Fiber Optic Simulation ---
+        const canvas = document.getElementById('optical-fiber-canvas');
         const ctx = canvas.getContext('2d');
+        
         let width, height;
         let particles = [];
 
@@ -392,56 +343,49 @@
         window.addEventListener('resize', resize);
         resize();
 
-        class Particle {
+        class Photon {
             constructor() {
                 this.reset();
             }
-
             reset() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.speed = Math.random() * 5 + 2; // Fast speed
-                this.size = Math.random() * 2 + 0.5;
-                this.length = Math.random() * 50 + 10;
-                this.angle = 0; // Horizontal flow (0 radians)
-                // Color variation: Cyan to Blue
-                this.color = `rgba(${0}, ${Math.floor(Math.random() * 155 + 100)}, 255, ${Math.random() * 0.5 + 0.1})`;
+                this.vx = Math.random() * 4 + 2; // High velocity
+                this.len = Math.random() * 80 + 20; // Long trails
+                this.width = Math.random() * 2;
+                this.alpha = Math.random() * 0.5 + 0.1;
+                this.color = Math.random() > 0.9 ? '#ffffff' : '#00f3ff'; // Occasional white flash
             }
-
             update() {
-                this.x += this.speed;
-                // Wrap around screen
-                if (this.x > width) {
-                    this.x = -this.length;
+                this.x += this.vx;
+                if(this.x > width + this.len) {
+                    this.x = -this.len;
                     this.y = Math.random() * height;
                 }
             }
-
             draw() {
                 ctx.beginPath();
-                // Draw a trail (stream) instead of a dot
-                const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.length, this.y);
-                gradient.addColorStop(0, this.color);
-                gradient.addColorStop(1, 'rgba(0,0,0,0)');
+                // Create a glowing trail effect
+                let grad = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y);
+                grad.addColorStop(0, this.color);
+                grad.addColorStop(1, "rgba(0, 243, 255, 0)");
                 
-                ctx.strokeStyle = gradient;
-                ctx.lineWidth = this.size;
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = this.width;
                 ctx.moveTo(this.x, this.y);
-                ctx.lineTo(this.x - this.length, this.y);
+                ctx.lineTo(this.x - this.len, this.y);
                 ctx.stroke();
             }
         }
 
-        // Init Particles
-        for (let i = 0; i < 150; i++) {
-            particles.push(new Particle());
-        }
+        // Create high density flow
+        for(let i=0; i<100; i++) particles.push(new Photon());
 
         function animate() {
-            // Trail effect (semi-transparent clear)
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-            ctx.fillRect(0, 0, width, height);
-
+            // Clear with slight opacity for motion blur trail
+            ctx.fillStyle = "rgba(2, 2, 2, 0.2)"; 
+            ctx.fillRect(0,0,width,height);
+            
             particles.forEach(p => {
                 p.update();
                 p.draw();
@@ -450,19 +394,17 @@
         }
         animate();
 
-        // --- 2. INTERACTION LOGIC ---
+        // --- ACTIONS ---
         function copyEmail() {
-            const email = "joshua369x@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
+            navigator.clipboard.writeText("joshua369x@gmail.com").then(() => {
                 const toast = document.getElementById("toast");
                 toast.className = "show";
-                setTimeout(() => toast.className = toast.className.replace("show", ""), 3000);
+                setTimeout(() => toast.className = toast.className.replace("show", ""), 2500);
             });
         }
 
         function buyAction() {
-            const link = "https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv";
-            window.open(link, '_blank');
+            window.open("https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv", '_blank');
         }
     </script>
 </body>
