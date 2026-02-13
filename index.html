@@ -3,160 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photonflow.ai</title>
-    <meta name="description" content="photonflow.ai — Reserved domain. For strategic inquiries only.">
+    <title>photonflow.ai | Light Speed Intelligence</title>
+    <meta name="description" content="Acquire photonflow.ai - The definitive domain for Optical Computing, Silicon Photonics, and Light-Speed AGI Architecture.">
+    <meta name="keywords" content="photonflow, AI domain, Optical Computing, Silicon Photonics, AGI, Neural Networks, Light Speed, Elon Musk">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "photonflow.ai Domain Name",
+      "description": "Premium domain asset for the future of Photonic AI and Optical Computing.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Domain Asset"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv",
+        "priceCurrency": "USD",
+        "price": "7000",
+        "priceValidUntil": "2028-01-01",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    </script>
+
     <style>
+        :root {
+            --bg-color: #000000;
+            --photon-cyan: #00f3ff;
+            --photon-blue: #0066ff;
+            --photon-white: #e0faff;
+            --text-primary: #ffffff;
+            --text-dim: #8892b0;
+            --glass: rgba(10, 20, 30, 0.6);
+            --border: rgba(0, 243, 255, 0.15);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #ffffff; 
-            background: linear-gradient(135deg, #050508 0%, #0a0a12 100%);
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px; 
-            text-align: center; 
-            position: relative; 
-            overflow-x: hidden; 
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
-        .light-effect { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            width: min(120vw, 1000px); 
-            height: min(120vh, 1000px); 
-            background: radial-gradient(circle at center, rgba(180, 200, 255, 0.06) 0%, transparent 65%);
-            transform: translate(-50%, -50%); 
-            pointer-events: none; 
-            z-index: -1; 
+
+        /* --- BACKGROUND PARTICLE CANVAS --- */
+        #flow-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
         }
-        .container { 
-            max-width: 760px; 
-            width: 100%; 
-            padding: 70px 40px; 
-            background: rgba(10, 12, 20, 0.8);
-            backdrop-filter: blur(16px); 
-            border-radius: 28px; 
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(180, 200, 255, 0.15); 
-            border: 1px solid rgba(180, 200, 255, 0.1); 
-            z-index: 1; 
+
+        /* --- INTRO SECTION --- */
+        .intro-quote {
+            text-align: center;
+            padding-top: 5vh;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text-dim);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in;
+            opacity: 0.8;
         }
-        h1 { 
-            font-size: clamp(2.5rem, 8vw, 5rem); /* 稍微缩小最大值，适配长域名 */
-            font-weight: 200; 
-            letter-spacing: 0.1em; /* 减少字间距，避免过散 */
-            margin-bottom: 35px; 
-            opacity: 0.95; 
-            text-transform: lowercase; 
-            color: #d0e0ff;
-            word-break: break-all; /* 长单词自动换行（可选） */
-            line-height: 1.2; /* 控制行高，避免挤压 */
+
+        .intro-quote span {
+            color: var(--photon-cyan);
+            text-shadow: 0 0 10px var(--photon-cyan);
         }
-        .domain { display: inline-block; transition: opacity 0.3s ease; }
-        .domain:hover { opacity: 0.8; }
-        p { 
-            font-size: clamp(1.2rem, 4.5vw, 1.6rem); 
-            opacity: 0.85; 
-            max-width: 640px; 
-            margin: 0 auto 45px; 
-            line-height: 1.8; 
-            color: #c0d0e8;
+
+        header {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
         }
-        .note-section { 
-            background: rgba(20, 25, 40, 0.3); 
-            border-radius: 18px; 
-            padding: 28px; 
-            margin: 45px 0; 
-            border: 1px solid rgba(180, 200, 255, 0.15); 
+
+        .domain-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
         }
-        .note-text { 
-            font-size: 0.98rem; 
-            opacity: 0.75; 
-            line-height: 1.8; 
-            color: #a0b8d8;
+
+        /* Dynamic Font: PhotonFlow (Liquid, Fast) */
+        .brand-flow {
+            font-family: 'Michroma', sans-serif; /* Wide, Sci-Fi */
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            background: linear-gradient(90deg, #fff, var(--photon-cyan), var(--photon-blue));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: lightSpeed 3s linear infinite;
         }
-        .contact-section { margin-top: 45px; }
-        .email-link { 
-            font-size: 1.5rem; 
-            color: #90c0ff; 
-            text-decoration: none; 
-            font-family: 'Courier New', monospace; 
-            padding: 12px 26px; 
-            background: rgba(180, 200, 255, 0.12); 
-            border-radius: 12px; 
-            display: inline-block; 
-            border: 1px solid rgba(180, 200, 255, 0.3); 
-            transition: all 0.3s ease; 
+
+        /* Dynamic Font: .AI (Digital, Quantum) */
+        .brand-ai {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: #fff;
+            position: relative;
         }
-        .email-link:hover { 
-            background: rgba(180, 200, 255, 0.22); 
-            transform: translateY(-3px); 
-            box-shadow: 0 8px 20px rgba(180, 200, 255, 0.12); 
+        
+        .brand-ai::after {
+            content: '';
+            position: absolute;
+            bottom: 5px; right: -10px;
+            width: 10px; height: 10px;
+            background: var(--photon-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--photon-cyan);
+            animation: pulse 1s infinite;
         }
-        .contact-note { 
-            font-size: 0.95rem; 
-            opacity: 0.65; 
-            margin-top: 18px; 
-            font-style: italic; 
-            color: #90a8c8;
+
+        /* --- 12 AI FIELDS GRID --- */
+        .grid-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        .footer { 
-            position: absolute; 
-            bottom: 30px; 
-            font-size: 0.85rem; 
-            opacity: 0.4; 
-            width: 100%; 
-            text-align: center; 
-            color: #7088a8;
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
-        @media (max-width: 768px) { 
-            .container { padding: 50px 30px; margin: 20px; } 
-            .email-link { font-size: 1.3rem; } 
-            h1 { 
-                font-size: clamp(2.2rem, 10vw, 4rem); /* 移动端更小 */
-                letter-spacing: 0.05em; /* 更紧凑 */
-            }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--photon-cyan);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        /* Light beam effect on hover */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .card:hover::before { left: 150%; }
+
+        .card h3 {
+            color: var(--photon-white);
+            font-family: 'Michroma', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* --- PRICING --- */
+        .pricing-panel {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(to top, #000 20%, transparent);
+        }
+
+        .price-main {
+            font-size: 4rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .installments {
+            display: inline-block;
+            border: 1px solid var(--border);
+            padding: 5px 15px;
+            border-radius: 50px;
+            color: var(--photon-cyan);
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        /* --- CTA BUTTONS --- */
+        .action-area {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-family: 'Michroma', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .btn-buy {
+            background: #fff;
+            color: #000;
+            border: 1px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.5);
+            background: var(--photon-cyan);
+            border-color: var(--photon-cyan);
+        }
+
+        .btn-contact {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-contact:hover {
+            border-color: var(--photon-cyan);
+            color: var(--photon-cyan);
+            box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #444;
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 0.8; transform: translateY(0); } }
+        @keyframes lightSpeed { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+
+        /* Toast */
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: var(--photon-blue);
+            color: #fff; text-align: center; border-radius: 4px; padding: 16px;
+            position: fixed; z-index: 100; bottom: 30px; left: 50%;
+            transform: translateX(-50%); font-family: 'Rajdhani', sans-serif;
+            font-weight: 600; box-shadow: 0 0 20px rgba(0,102,255,0.5);
+        }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body>
-    <div class="light-effect"></div>
-    <div class="container">
-        <h1><span class="domain">photonflow.ai</span></h1>
-        <p>This domain is reserved.<br>Future project consideration.</p>
-        
-        <!-- 低调中性免责声明 -->
-        <div class="note-section">
-            <div class="note-text">
-                This domain is reserved for future development and is not associated with any third party.
-            </div>
-        </div>
-        
-        <!-- 联系方式 -->
-        <div class="contact-section">
-            <a href="#" class="email-link" aria-label="Send email">
-                <span id="email-display">joshua369x@gmail.com</span>
-            </a>
-            <div class="contact-note">
-                For strategic inquiries only.
-            </div>
-        </div>
+
+    <!-- Particle Background -->
+    <canvas id="flow-canvas"></canvas>
+
+    <div class="intro-quote">
+        "<span>Photon flow</span> is what matters" — Elon Musk
     </div>
 
-    <div class="footer">
-        © <span id="currentYear"></span> photonflow.ai — All rights reserved.
-    </div>
+    <header>
+        <div class="domain-wrapper">
+            <h1 class="brand-flow">photonflow</h1>
+            <span class="brand-ai">.ai</span>
+        </div>
+        <p style="margin-top: 20px; color: var(--text-dim); letter-spacing: 2px;">THE BANDWIDTH OF INTELLIGENCE</p>
+    </header>
+
+    <main class="grid-section">
+        <div class="grid-container">
+            <!-- 12 AI & Photon Fields -->
+            <article class="card">
+                <h3>Optical Neural Networks</h3>
+                <p>Replacing electrons with photons for matrix multiplication at the speed of light.</p>
+            </article>
+            <article class="card">
+                <h3>Silicon Photonics</h3>
+                <p>The convergence of semiconductor manufacturing and optical data transmission.</p>
+            </article>
+            <article class="card">
+                <h3>Zero-Latency Inference</h3>
+                <p>Eliminating the bottleneck of electrical resistance for real-time AGI decision making.</p>
+            </article>
+            <article class="card">
+                <h3>Exascale Interconnects</h3>
+                <p>Massive bandwidth pipelines connecting thousands of GPUs into a single super-brain.</p>
+            </article>
+            <article class="card">
+                <h3>Holographic Storage</h3>
+                <p>5D optical data storage solutions for the infinite memory requirements of Large Models.</p>
+            </article>
+            <article class="card">
+                <h3>LiDAR Perception</h3>
+                <p>Advanced photonic sensing for autonomous agents to map the physical world.</p>
+            </article>
+            <article class="card">
+                <h3>Quantum Photonics</h3>
+                <p>Leveraging entangled photons for secure AI communications and q-bit processing.</p>
+            </article>
+            <article class="card">
+                <h3>Thermal Efficiency</h3>
+                <p>Drastically reducing the energy cost of intelligence. Cool light vs. hot electrons.</p>
+            </article>
+            <article class="card">
+                <h3>Femtosecond Processing</h3>
+                <p>Ultra-fast laser pulses enabling clock speeds impossible with silicon transistors.</p>
+            </article>
+            <article class="card">
+                <h3>Neuromorphic Optics</h3>
+                <p>Hardware architecture that mimics the biological brain using light pathways.</p>
+            </article>
+            <article class="card">
+                <h3>Photonic FPGA</h3>
+                <p>Reconfigurable optical logic gates for adaptive AI algorithms.</p>
+            </article>
+            <article class="card">
+                <h3>The Speed of Thought</h3>
+                <p>The ultimate goal: AGI that thinks as fast as light travels.</p>
+            </article>
+        </div>
+    </main>
+
+    <section class="pricing-panel">
+        <div class="price-main">$7,000</div>
+        <div class="installments">7 Monthly Installments Available</div>
+        
+        <div class="action-area">
+            <a href="#" onclick="buyAction()" class="btn btn-buy">Acquire Asset</a>
+            <button onclick="copyEmail()" class="btn btn-contact">Contact Design</button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 PhotonFlow Concept. All rights reserved.<br><br>
+        Disclaimer: Photonflow.ai is a premium domain asset available for acquisition. 
+        Quotes attributed to Elon Musk are contextual references to physics principles often cited by him 
+        (e.g., regarding engine efficiency or Starlink) and used here metaphorically for optical computing. 
+        Not affiliated with Neuralink, SpaceX, or OpenAI. Transaction securely handled by Spaceship.com.
+    </footer>
+
+    <div id="toast">Email joshua369x@gmail.com copied</div>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        const email = 'joshua369x' + '@' + 'gmail.com';
-        const subject = '?subject=Inquiry: photonflow.ai';
-        const mailto = 'mailto:' + email + subject;
-        document.querySelector('.email-link').href = mailto;
-        document.getElementById('email-display').textContent = email;
+        // --- 1. PARTICLE FLOW SYSTEM ---
+        const canvas = document.getElementById('flow-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.speed = Math.random() * 5 + 2; // Fast speed
+                this.size = Math.random() * 2 + 0.5;
+                this.length = Math.random() * 50 + 10;
+                this.angle = 0; // Horizontal flow (0 radians)
+                // Color variation: Cyan to Blue
+                this.color = `rgba(${0}, ${Math.floor(Math.random() * 155 + 100)}, 255, ${Math.random() * 0.5 + 0.1})`;
+            }
+
+            update() {
+                this.x += this.speed;
+                // Wrap around screen
+                if (this.x > width) {
+                    this.x = -this.length;
+                    this.y = Math.random() * height;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                // Draw a trail (stream) instead of a dot
+                const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.length, this.y);
+                gradient.addColorStop(0, this.color);
+                gradient.addColorStop(1, 'rgba(0,0,0,0)');
+                
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = this.size;
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x - this.length, this.y);
+                ctx.stroke();
+            }
+        }
+
+        // Init Particles
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            // Trail effect (semi-transparent clear)
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // --- 2. INTERACTION LOGIC ---
+        function copyEmail() {
+            const email = "joshua369x@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "show";
+                setTimeout(() => toast.className = toast.className.replace("show", ""), 3000);
+            });
+        }
+
+        function buyAction() {
+            const link = "https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv";
+            window.open(link, '_blank');
+        }
     </script>
 </body>
 </html>
