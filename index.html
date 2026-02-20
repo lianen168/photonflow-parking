@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>photonflow.ai | The Optical Interconnect</title>
     <meta name="description" content="Acquire photonflow.ai. In the AGI era, the bottleneck is the interconnect. Photon flow is what matters.">
     
@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Syncopate:wght@700&family=Rajdhani:wght@300;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg-core: #020202;
@@ -18,10 +17,10 @@
             --blue: #0066ff;
             --white: #ffffff;
             --border: rgba(255, 255, 255, 0.1);
+            --success: #00ff9d;
+            --error: #ff4757;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             background-color: var(--bg-core);
             color: var(--white);
@@ -29,12 +28,10 @@
             overflow-x: hidden;
             line-height: 1.4;
         }
-
         /* --- BACKGROUND CANVAS (V1 Style: Trails) --- */
         #flow-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
         }
-
         /* --- HEADER SECTION (V1 Style: Fonts & Anim) --- */
         header {
             padding: 5vh 20px 2vh 20px;
@@ -43,7 +40,6 @@
             z-index: 10;
             background: linear-gradient(180deg, rgba(2,2,2,0.8), transparent);
         }
-
         .musk-quote {
             font-family: 'Rajdhani', sans-serif;
             text-transform: uppercase;
@@ -54,7 +50,6 @@
             opacity: 0.8;
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
         }
-
         .brand-wrapper {
             display: flex;
             justify-content: center;
@@ -63,7 +58,6 @@
             flex-wrap: wrap;
             margin-bottom: 2.5rem;
         }
-
         /* V1 Title Styles */
         .brand-flow {
             font-family: 'Michroma', sans-serif; /* Wide, Sci-Fi */
@@ -74,7 +68,6 @@
             -webkit-text-fill-color: transparent;
             animation: lightSpeed 3s linear infinite;
         }
-
         .brand-ai {
             font-family: 'Syncopate', sans-serif;
             font-weight: 700;
@@ -93,7 +86,6 @@
             box-shadow: 0 0 15px var(--cyan);
             animation: pulse 1s infinite;
         }
-
         /* --- THE BOTTLENECK INSIGHT --- */
         .insight-box {
             max-width: 700px;
@@ -112,21 +104,18 @@
             line-height: 1.5;
         }
         .highlight { color: var(--cyan); font-weight: 700; text-shadow: 0 0 10px rgba(0,243,255,0.2); }
-
         /* --- 12 MODULES GRID (CSS ANIMATIONS) --- */
         .grid-wrapper {
             padding: 2rem 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Mobile optimized */
             gap: 15px;
         }
         @media(min-width: 768px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
-
         .module {
             background: rgba(10, 10, 15, 0.6); /* Slightly darker/glassy */
             border: 1px solid var(--border);
@@ -138,75 +127,58 @@
             backdrop-filter: blur(5px);
             transition: all 0.3s;
         }
-
         .module:hover {
             border-color: var(--cyan);
             transform: translateY(-3px);
             box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
             background: rgba(0, 243, 255, 0.03);
         }
-
         /* --- CSS ANIMATED ICONS --- */
         .icon-stage { width: 40px; height: 40px; position: relative; margin-bottom: 5px; }
-
         /* 1. Beam */
         .anim-beam { width: 100%; height: 2px; background: #333; top: 50%; position: absolute; }
         .anim-beam::after { content: ''; position: absolute; top: -1px; left: 0; width: 15px; height: 4px; background: var(--cyan); animation: moveRight 1s infinite linear; box-shadow: 0 0 10px var(--cyan); }
-
         /* 2. Pulse */
         .anim-pulse { width: 100%; height: 100%; border: 2px solid var(--cyan); border-radius: 50%; opacity: 0; animation: ripple 1.5s infinite; }
-
         /* 3. Bar */
         .anim-bar-cont { width: 10px; height: 30px; border: 1px solid #555; position: absolute; bottom: 0; left: 15px; }
         .anim-bar-fill { width: 100%; height: 100%; background: var(--cyan); animation: drain 2s infinite ease-in-out; bottom: 0; position: absolute; }
-
         /* 4. Nodes */
         .anim-nodes { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         .node-dot { width: 6px; height: 6px; background: #555; border-radius: 50%; }
         .node-dot:nth-child(1) { animation: flash 1s infinite 0s; }
         .node-dot:nth-child(2) { animation: flash 1s infinite 0.2s; }
         .node-dot:nth-child(3) { animation: flash 1s infinite 0.4s; }
-
         /* 5. Stream */
         .anim-stream { display: flex; flex-direction: column; gap: 4px; width: 100%; height: 100%; justify-content: center; }
         .stream-line { height: 2px; width: 100%; background: linear-gradient(90deg, transparent, var(--cyan)); animation: slide 1s infinite linear; }
         .stream-line:nth-child(2) { animation-delay: 0.5s; width: 80%; }
-
         /* 6. Radar */
         .anim-radar { width: 30px; height: 30px; border: 1px solid #555; border-radius: 50%; position: relative; margin: 5px auto; overflow: hidden; }
         .radar-sweep { width: 100%; height: 100%; background: conic-gradient(from 0deg, transparent 70%, var(--cyan)); border-radius: 50%; animation: spin 2s infinite linear; opacity: 0.5; }
-
         /* 7. Stack */
         .anim-stack div { width: 25px; height: 4px; background: #444; margin-bottom: 4px; border-radius: 2px; }
         .anim-stack div:nth-child(1) { animation: stackLight 1.5s infinite 0s; }
         .anim-stack div:nth-child(2) { animation: stackLight 1.5s infinite 0.5s; }
         .anim-stack div:nth-child(3) { animation: stackLight 1.5s infinite 1.0s; }
-
         /* 8. Entangle */
         .anim-entangle { position: relative; width: 100%; height: 100%; }
         .dot-q { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; position: absolute; box-shadow: 0 0 5px var(--cyan); }
         .dot-q.left { left: 0; top: 16px; animation: orbitL 2s infinite ease-in-out; }
         .dot-q.right { right: 0; top: 16px; animation: orbitR 2s infinite ease-in-out; }
-
         /* 9. Hologram */
         .anim-holo { width: 20px; height: 20px; border: 1px dashed var(--cyan); margin: 10px auto; animation: spin 4s infinite linear; }
-
         /* 10. Logic */
         .anim-logic { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; height: 100%; }
         .logic-bit { background: #333; }
         .logic-bit.on { background: var(--cyan); animation: toggle 0.5s infinite alternate; }
-
         /* 11. Wave */
         .anim-wave { width: 100%; height: 20px; margin-top: 10px; background: repeating-linear-gradient(90deg, transparent, transparent 5px, var(--cyan) 5px, var(--cyan) 6px); mask-image: linear-gradient(to right, transparent, black, transparent); animation: moveRight 2s infinite linear; }
-
         /* 12. Brain */
         .anim-brain { width: 30px; height: 30px; border: 2px solid #555; border-radius: 6px; margin: 5px auto; display: flex; justify-content: center; align-items: center; }
         .brain-core { width: 10px; height: 10px; background: var(--cyan); animation: pulse 1s infinite; box-shadow: 0 0 8px var(--cyan); }
-
-
         .mod-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: #fff; }
         .mod-desc { font-size: 0.65rem; color: #888; line-height: 1.3; }
-
         /* --- FOOTER --- */
         footer {
             border-top: 1px solid var(--border);
@@ -214,13 +186,10 @@
             text-align: center;
             background: linear-gradient(0deg, #050505, transparent);
         }
-
         .price-block { margin-bottom: 2rem; }
         .price { font-size: 3rem; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #fff; text-shadow: 0 0 20px rgba(0, 243, 255, 0.2); }
         .plan { font-size: 0.9rem; color: var(--cyan); letter-spacing: 1px; background: rgba(0,243,255,0.1); padding: 5px 15px; border-radius: 20px; }
-
         .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 2rem; }
-
         .btn {
             padding: 15px 35px;
             font-family: 'Michroma', sans-serif; /* Using V1 font for button for consistency */
@@ -236,9 +205,68 @@
         
         .btn-contact { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
         .btn-contact:hover { border-color: var(--cyan); color: var(--cyan); }
-
         .disclaimer { font-size: 0.6rem; color: #555; max-width: 600px; margin: 0 auto; line-height: 1.5; }
-
+        /* --- OFFER FORM --- */
+        .offer-form-container {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 1px dashed var(--border);
+        }
+        .offer-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        #offer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        #offer-form input {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid var(--border);
+            color: var(--white);
+            padding: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        #offer-form input::placeholder { color: #666; }
+        #offer-form input:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+        .btn-offer-submit {
+            padding: 15px 35px;
+            font-family: 'Michroma', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+            background: transparent;
+            color: var(--cyan);
+            border: 1px solid var(--cyan);
+        }
+        .btn-offer-submit:hover { background: var(--cyan); color: #000; box-shadow: 0 0 20px var(--cyan); }
+        .btn-offer-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+        #form-status {
+            margin-top: 1rem;
+            height: 1.2rem;
+            font-size: 0.8rem;
+            display: none;
+        }
+        #form-status.success { color: var(--success); }
+        #form-status.error { color: var(--error); }
         /* --- ANIMATIONS --- */
         @keyframes lightSpeed { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
         @keyframes moveRight { 0% { left: 0; background-position: 0 0; } 100% { left: 100%; background-position: 20px 0; } }
@@ -252,7 +280,6 @@
         @keyframes orbitR { 0% { right: 0; } 50% { right: 25px; } 100% { right: 0; } }
         @keyframes toggle { from { opacity: 0.3; } to { opacity: 1; } }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-
         /* Toast */
         #toast {
             visibility: hidden; background: #111; color: var(--cyan); border: 1px solid var(--cyan);
@@ -265,9 +292,7 @@
     </style>
 </head>
 <body>
-
     <canvas id="flow-canvas"></canvas>
-
     <header>
         <!-- Top: Musk Quote -->
         <div class="musk-quote">"Photon flow is what matters"</div>
@@ -277,7 +302,6 @@
             <h1 class="brand-flow">photonflow</h1>
             <span class="brand-ai">.ai</span>
         </div>
-
         <!-- Sub: The Bottleneck Hook -->
         <div class="insight-box">
             <div class="insight-text">
@@ -286,7 +310,6 @@
             </div>
         </div>
     </header>
-
     <main class="grid-wrapper">
         <div class="tech-grid">
             <!-- 12 Modules with V3 CSS Animations -->
@@ -307,55 +330,46 @@
                 <div class="mod-title">Thermal Eff.</div>
                 <div class="mod-desc">Photons create zero resistive heat.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-nodes"><div class="node-dot"></div><div class="node-dot"></div><div class="node-dot"></div></div></div>
                 <div class="mod-title">Optical NN</div>
                 <div class="mod-desc">Diffraction-based matrix math.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-stream"><div class="stream-line"></div><div class="stream-line"></div></div></div>
                 <div class="mod-title">Exascale I/O</div>
                 <div class="mod-desc">Terabits per second interconnects.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-radar"><div class="radar-sweep"></div></div></div>
                 <div class="mod-title">LiDAR Vision</div>
                 <div class="mod-desc">Coherent sensing for robots.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-stack"><div></div><div></div><div></div></div></div>
                 <div class="mod-title">3D Stacking</div>
                 <div class="mod-desc">Vertical integration of logic & light.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-entangle"><div class="dot-q left"></div><div class="dot-q right"></div></div></div>
                 <div class="mod-title">Quantum Key</div>
                 <div class="mod-desc">Entangled photon encryption.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-holo"></div></div>
                 <div class="mod-title">Holographic RAM</div>
                 <div class="mod-desc">Volumetric 5D data storage.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-logic"><div class="logic-bit"></div><div class="logic-bit on"></div><div class="logic-bit on"></div><div class="logic-bit"></div></div></div>
                 <div class="mod-title">Photonic FPGA</div>
                 <div class="mod-desc">Reconfigurable optical gates.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-wave"></div></div>
                 <div class="mod-title">Analog Compute</div>
                 <div class="mod-desc">Continuous wave processing.</div>
             </div>
-
             <div class="module">
                 <div class="icon-stage"><div class="anim-brain"><div class="brain-core"></div></div></div>
                 <div class="mod-title">AGI Hardware</div>
@@ -363,16 +377,28 @@
             </div>
         </div>
     </main>
-
     <footer>
         <div class="price-block">
             <div class="price">$7,000</div>
             <div class="plan">7 MONTHLY INSTALLMENTS</div>
         </div>
-
         <div class="btn-group">
             <a onclick="buyAction()" class="btn btn-buy">ACQUIRE ASSET</a>
             <button onclick="copyEmail()" class="btn btn-contact">COPY CONTACT</button>
+        </div>
+
+        <!-- Offer Form Section -->
+        <div class="offer-form-container">
+            <h3 class="offer-title">Or Make an Offer</h3>
+            <form id="offer-form" action="https://formsubmit.co/zlqsl2018@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Offer for photonflow.ai">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="number" name="offer_amount" placeholder="Your Offer (USD)" required>
+                <input type="email" name="email" placeholder="Your Contact Email" required>
+                <button type="submit" class="btn btn-offer-submit">Submit Offer</button>
+            </form>
+            <p id="form-status"></p>
         </div>
 
         <div class="disclaimer">
@@ -383,7 +409,6 @@
             All transactions are securely processed via Spaceship.com.
         </div>
     </footer>
-
     <div id="toast">>> EMAIL ADDRESS COPIED</div>
 
     <script>
@@ -392,31 +417,23 @@
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
-
         function resize() {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
         }
         window.addEventListener('resize', resize);
         resize();
-
         class Particle {
-            constructor() {
-                this.reset();
-            }
-
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.speed = Math.random() * 5 + 2; // Fast speed (V1 logic)
+                this.speed = Math.random() * 5 + 2;
                 this.size = Math.random() * 2 + 0.5;
-                this.length = Math.random() * 50 + 10; // Long trails (V1 logic)
-                
-                // Color variation: Cyan to Blue (V1 logic)
+                this.length = Math.random() * 50 + 10;
                 const blueVal = Math.floor(Math.random() * 155 + 100);
                 this.color = `rgba(0, ${blueVal}, 255, ${Math.random() * 0.5 + 0.1})`;
             }
-
             update() {
                 this.x += this.speed;
                 if (this.x > width) {
@@ -424,14 +441,11 @@
                     this.y = Math.random() * height;
                 }
             }
-
             draw() {
                 ctx.beginPath();
-                // Draw a trail (stream)
                 const gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.length, this.y);
                 gradient.addColorStop(0, this.color);
                 gradient.addColorStop(1, 'rgba(0,0,0,0)');
-                
                 ctx.strokeStyle = gradient;
                 ctx.lineWidth = this.size;
                 ctx.moveTo(this.x, this.y);
@@ -439,37 +453,81 @@
                 ctx.stroke();
             }
         }
-
-        // Init Particles
-        for (let i = 0; i < 150; i++) {
-            particles.push(new Particle());
-        }
-
+        for (let i = 0; i < 150; i++) { particles.push(new Particle()); }
         function animate() {
-            // V1 Logic: Trail effect (motion blur)
             ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; 
             ctx.fillRect(0, 0, width, height);
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
         animate();
 
         // --- ACTIONS ---
         function copyEmail() {
-            navigator.clipboard.writeText("joshua369x@gmail.com").then(() => {
+            navigator.clipboard.writeText("zlqsl2018@gmail.com").then(() => {
                 const toast = document.getElementById('toast');
                 toast.className = 'show';
                 setTimeout(() => toast.className = '', 2000);
             });
         }
-
         function buyAction() {
             window.open("https://www.spaceship.com/s/buy/photonflow.ai/ASEzeZrmwVdHG6Fv", "_blank");
         }
+    </script>
+    <script>
+    // --- RELIABLE AJAX FORM SUBMISSION LOGIC ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('offer-form');
+        const statusDiv = document.getElementById('form-status');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitButton = form.querySelector('.btn-offer-submit');
+                const originalButtonText = submitButton.innerHTML;
+                
+                submitButton.innerHTML = 'TRANSMITTING...';
+                submitButton.disabled = true;
+                statusDiv.style.display = "block";
+                statusDiv.className = ''; 
+                statusDiv.innerText = 'Establishing secure link...';
+
+                const formData = new FormData(form);
+                
+                let actionUrl = form.action;
+                if (!actionUrl.includes('/ajax/')) {
+                    actionUrl = actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+                }
+                
+                fetch(actionUrl, { 
+                    method: "POST", 
+                    body: formData 
+                })
+                .then(response => response.json())
+                .then(data => {
+                    statusDiv.innerText = "Transmission successful. We will contact you shortly.";
+                    statusDiv.className = 'success';
+                    form.reset();
+                    submitButton.innerHTML = "Offer Sent!";
+                })
+                .catch(error => {
+                    statusDiv.innerText = "Error: Connection interrupted. Please try again.";
+                    statusDiv.className = 'error';
+                    console.error('Form Error:', error);
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        if (submitButton.innerHTML === "Offer Sent!") {
+                            submitButton.innerHTML = originalButtonText;
+                            submitButton.disabled = false;
+                        }
+                        statusDiv.style.display = 'none';
+                    }, 5000);
+                });
+            });
+        }
+    });
     </script>
 </body>
 </html>
